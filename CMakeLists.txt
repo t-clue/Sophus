@@ -10,6 +10,11 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
+# Generate Info.plist for the IOS framework
+if(APPLE_FRAMEWORK)
+  include(${CMAKE_CURRENT_SOURCE_DIR}/IOS/InfoPlist.cmake)
+endif()
+
 set(CMAKE_CXX_STANDARD 11)
 
 # Set compiler specific settings (FixMe: Should not cmake do this for us automatically?)
